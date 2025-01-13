@@ -1,0 +1,84 @@
+diff --git a/configs/qcm6490/resourcemanager_qcm6490_idp.xml b/configs/qcm6490/resourcemanager_qcm6490_idp.xml
+index aad9534..b03bc62 100644
+--- a/configs/qcm6490/resourcemanager_qcm6490_idp.xml
++++ b/configs/qcm6490/resourcemanager_qcm6490_idp.xml
+@@ -132,7 +132,7 @@
+             <id>PAL_DEVICE_IN_HANDSET_MIC</id>
+             <back_end_name>CODEC_DMA-LPAIF_VA-TX-0</back_end_name>
+             <max_channels>4</max_channels>
+-            <channels>1</channels>
++            <channels>2</channels>
+             <samplerate>48000</samplerate>
+             <snd_device_name>handset-mic</snd_device_name>
+             <ec_enable>0</ec_enable>
+@@ -649,7 +649,7 @@
+         </out-device>
+         <out-device>
+             <id>PAL_DEVICE_OUT_SPEAKER</id>
+-            <back_end_name>CODEC_DMA-LPAIF_WSA-RX-0</back_end_name>
++            <back_end_name>MI2S-LPAIF-RX-PRIMARY</back_end_name>
+             <max_channels>4</max_channels>
+             <channels>2</channels>
+             <samplerate>48000</samplerate>
+diff --git a/configs/qcm6490/mixer_paths_qcm6490_idp.xml b/configs/qcm6490/mixer_paths_qcm6490_idp.xml
+index bf5e4e7..407c6a0 100644
+--- a/configs/qcm6490/mixer_paths_qcm6490_idp.xml
++++ b/configs/qcm6490/mixer_paths_qcm6490_idp.xml
+@@ -265,9 +265,9 @@
+     </path>
+ 
+     <path name="dmic1">
+-        <ctl name="VA DMIC MUX0" value="DMIC1" />
+-        <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
+-        <ctl name="VA_DEC0 Volume" value="100" />
++        <ctl name="VA DMIC MUX1" value="DMIC1" />
++        <ctl name="VA_AIF1_CAP Mixer DEC1" value="1" />
++        <ctl name="VA_DEC1 Volume" value="100" />
+     </path>
+ 
+     <path name="dmic2">
+@@ -283,21 +283,6 @@
+     </path>
+ 
+     <path name="speaker">
+-        <ctl name="SpkrLeft PA Volume" value="20" />
+-        <ctl name="WSA RX0 MUX" value="AIF1_PB" />
+-        <ctl name="WSA_RX0 INP0" value="RX0" />
+-        <ctl name="WSA_COMP1 Switch" value="1" />
+-        <ctl name="SpkrLeft COMP Switch" value="1" />
+-        <ctl name="SpkrLeft BOOST Switch" value="1" />
+-        <ctl name="SpkrLeft DAC Switch" value="1" />
+-	<ctl name="SpkrRight PA Volume" value="20" />
+-        <ctl name="WSA RX1 MUX" value="AIF1_PB" />
+-        <ctl name="WSA_RX1 INP0" value="RX1" />
+-        <ctl name="WSA_COMP2 Switch" value="1" />
+-        <ctl name="SpkrRight COMP Switch" value="1" />
+-        <ctl name="SpkrRight BOOST Switch" value="1" />
+-        <ctl name="SpkrRight DAC Switch" value="1" />
+-
+     </path>
+ 
+     <path name="speaker-prot">
+@@ -328,13 +313,6 @@
+     </path>
+ 
+     <path name="speaker-mono-2">
+-        <ctl name="WSA RX1 MUX" value="AIF1_PB" />
+-        <ctl name="WSA_RX1 INP0" value="RX1" />
+-        <ctl name="WSA_COMP2 Switch" value="1" />
+-        <ctl name="SpkrRight COMP Switch" value="1" />
+-        <ctl name="SpkrRight VISENSE Switch" value="1" />
+-        <ctl name="SpkrRight SWR DAC_Port Switch" value="1" />
+-        <ctl name="Idle Detect" value="1" />
+     </path>
+ 
+     <path name="speaker-mono-2-prot">
+@@ -457,6 +435,7 @@
+ 
+     <path name="handset-mic">
+         <path name="dmic0" />
++        <path name="dmic1" />
+     </path>
+ 
+     <path name="headphones">
+

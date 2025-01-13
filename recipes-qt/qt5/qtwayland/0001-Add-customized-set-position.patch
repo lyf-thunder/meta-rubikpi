@@ -1,0 +1,37 @@
+From ac2debd7706052033c50b6832e27e98525f0894e Mon Sep 17 00:00:00 2001
+From: sunxw0820 <sunxw0820@thundersoft.com>
+Date: Fri, 26 May 2023 18:06:02 +0800
+Subject: [PATCH] Add customized set position
+
+---
+ src/3rdparty/protocol/xdg-shell.xml | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/src/3rdparty/protocol/xdg-shell.xml b/src/3rdparty/protocol/xdg-shell.xml
+index 3a87a9ed..36448a76 100644
+--- a/src/3rdparty/protocol/xdg-shell.xml
++++ b/src/3rdparty/protocol/xdg-shell.xml
+@@ -675,6 +675,20 @@
+       <entry name="bottom_right" value="10"/>
+     </enum>
+ 
++    <request name="set_position">
++      <description summary="start with a custom window position">
++       Tell the weston server to place the client at specified position
++
++       There is no user action required to move surface.
++
++       The server may ignore move requests depending on the state
++       of the surface (e.g. fullscreen or maximized).
++      </description>
++
++      <arg name="x" type="uint" summary="new x co-ordinate of surface"/>
++      <arg name="y" type="uint" summary="new y co-ordinate of surface"/>
++    </request>
++
+     <request name="resize">
+       <description summary="start an interactive resize">
+ 	Start a user-driven, interactive resize of the surface.
+-- 
+2.17.1
+

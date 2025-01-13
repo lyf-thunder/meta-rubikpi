@@ -1,0 +1,25 @@
+diff --git a/plugins/tinyalsa/test/backend_conf.xml b/plugins/tinyalsa/test/backend_conf.xml
+index 5115a1d..7675f95 100644
+--- a/plugins/tinyalsa/test/backend_conf.xml
++++ b/plugins/tinyalsa/test/backend_conf.xml
+@@ -51,6 +51,7 @@
+     <device name="USB_AUDIO-TX" rate="48000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF-RX-PRIMARY" rate="48000" ch="2" bits="16" />
+     <device name="MI2S-LPAIF-TX-PRIMARY" rate="48000" ch="2" bits="16" />
++    <device name="MI2S-LPAIF_AUD-RX-SECONDARY" rate="48000" ch="2" bits="16" />
+     <device name="MI2S-LPAIF_AUD-RX-PRIMARY" rate="48000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF_AUD-TX-PRIMARY" rate="48000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF-RX-SECONDARY" rate="48000" ch="2" bits="16" />
+diff --git a/service/src/device_hw_ep.c b/service/src/device_hw_ep.c
+index 58911f1..d783220 100644
+--- a/service/src/device_hw_ep.c
++++ b/service/src/device_hw_ep.c
+@@ -338,7 +338,7 @@ static int populate_cdc_dma_i2s_tdm_pcm_ep_info(hw_ep_info_t *hw_ep_info, char *
+     else if (!strcmp(lpaif_type, "LPAIF_AXI"))
+         cdc_dma_i2s_tdm_config->lpaif_type = LPAIF_AXI;
+     else if (!strcmp(lpaif_type, "LPAIF_AUD"))
+-        cdc_dma_i2s_tdm_config->lpaif_type = LPAIF_AUD;
++        cdc_dma_i2s_tdm_config->lpaif_type = LPAIF;
+     else if (!strcmp(lpaif_type, "LPAIF_SDR"))
+         cdc_dma_i2s_tdm_config->lpaif_type = LPAIF_SDR;
+     else if (!strcmp(lpaif_type, "LPAIF_WSA2"))

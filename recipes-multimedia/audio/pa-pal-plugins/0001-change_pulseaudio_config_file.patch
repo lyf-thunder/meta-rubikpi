@@ -1,0 +1,68 @@
+diff --git a/module-pal-card/configs/qcm6490-idp-snd-card.conf b/module-pal-card/configs/qcm6490-idp-snd-card.conf
+index 1e7d0e4..8fb6ce0 100644
+--- a/module-pal-card/configs/qcm6490-idp-snd-card.conf
++++ b/module-pal-card/configs/qcm6490-idp-snd-card.conf
+@@ -26,6 +26,18 @@ encodings = pcm
+ sample-formats = s16le
+ channel-maps = front-left,front-right
+ 
++[Port hdmi]
++description = hdmi
++default-channel-map = front-left,front-right
++default-sample-rate = 48000
++direction = out
++priority = 150
++presence = always
++device = PAL_DEVICE_OUT_HDMI
++encodings = pcm
++sample-formats = s32le
++channel-maps = front-left,front-right
++
+ [Port handset-mic]
+ description = builtin mic
+ default-channel-map = front-center
+@@ -94,7 +106,7 @@ description = Default pal profile
+ priority = 500
+ max-sink-channels = 2
+ max-source-channels = 2
+-port-names = speaker speaker-mic handset-mic headset headset-mic bta2dp-out btsco-in btsco-out
++port-names = speaker speaker-mic handset-mic headset headset-mic bta2dp-out btsco-in btsco-out hdmi
+ 
+ [Sink low-latency0]
+ description = pal sink to play via low-latency path
+@@ -106,7 +118,7 @@ default-channel-map = front-left,front-right
+ default-buffer-size = 1024
+ default-buffer-count = 4
+ encodings = pcm
+-port-names = speaker headset
++port-names = speaker headset hdmi
+ presence = always
+ avoid-processing = rate channels
+ use-hw-volume = true
+@@ -122,7 +134,7 @@ default-buffer-size = 1920
+ default-buffer-count = 4
+ encodings = pcm
+ avoid-processing = rate channels
+-port-names = speaker headset bta2dp-out
++port-names = speaker headset bta2dp-out hdmi
+ presence = always
+ use-hw-volume = true
+ 
+@@ -136,7 +148,7 @@ default-channel-map = front-left,front-right
+ encodings = mpeg aac
+ default-buffer-size = 16484
+ default-buffer-count = 4
+-port-names = speaker headset bta2dp-out
++port-names = speaker headset bta2dp-out hdmi
+ presence = always
+ use-hw-volume = true
+ 
+@@ -149,7 +161,7 @@ default-sample-format = s16le
+ default-channel-map = front-left,front-right
+ default-buffer-size = 1024
+ default-buffer-count = 4
+-port-names = speaker headset btsco-out
++port-names = speaker headset btsco-out bta2dp-out hdmi
+ presence = always
+ use-hw-volume = true
+ 

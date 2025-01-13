@@ -1,0 +1,3 @@
+SRC_URI += "file://0001-Add-Xiaomi-TV-VendorId.patch \
+            file://0001-Add-Xiaomi-TV-VendorId-1.patch \
+           "

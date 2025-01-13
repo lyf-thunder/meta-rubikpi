@@ -1,0 +1,25 @@
+This applicaton can send any HCI command via UART and it can also download the bt patchram, its parameter is same as brcm_patchram_plus
+
+To build this tool in Android:
+
+Copy to any folder in your android code
+
+
+To build this FM radio in Ubuntu/Linux, just "make" it.
+
+Before run this demo, please run the hciattach utility firstly.
+
+
+
+
+
+1. To start application
+
+./app_vsc -d --patchram PATCHRAM_NAME.hcd --baudrate 1500000 --no2bytes --tosleep 5000 /dev/TTYDEVICE
+
+
+2. send command parameter
+
+Eg：
+
+hcicmd 03 0c 00

@@ -1,0 +1,45 @@
+diff --git a/qcm6490-bt.dtsi b/qcm6490-bt.dtsi
+index e5d2719..edf41ae 100644
+--- a/qcm6490-bt.dtsi
++++ b/qcm6490-bt.dtsi
+@@ -24,40 +24,3 @@
+ 		};
+ 	};
+ };
+-
+-&sound{
+-/* Dai-link nodes for binding slimbus codec dais with appropriate cpu dais */
+-	slimbus-rx0-dai-link {
+-		link-name = "SLIM-DEV1-RX-7";
+-
+-		cpu {
+-			sound-dai = <&q6apmbedai SLIMBUS_0_RX>;
+-		};
+-
+-		codec {
+-			sound-dai = <&slimbus 2>;
+-		};
+-	};
+-	slimbus-tx0-dai-link {
+-		link-name = "SLIM-DEV1-TX-7";
+-
+-		cpu {
+-			sound-dai = <&q6apmbedai SLIMBUS_0_TX>;
+-		};
+-
+-		codec {
+-			sound-dai = <&slimbus 1>;
+-		};
+-	};
+-	slimbus-a2dp-tx0-dai-link {
+-		link-name = "SLIM-DEV1-TX-9";
+-
+-		cpu {
+-			sound-dai = <&q6apmbedai SLIMBUS_0_TX>;
+-		};
+-
+-		codec {
+-			sound-dai = <&slimbus 4>;
+-		};
+-	};
+-};

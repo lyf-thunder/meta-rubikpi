@@ -1,0 +1,13 @@
+diff --git a/module-pal-card/src/pal-utils.c b/module-pal-card/src/pal-utils.c
+index 47d9597..8022d53 100644
+--- a/module-pal-card/src/pal-utils.c
++++ b/module-pal-card/src/pal-utils.c
+@@ -71,7 +71,7 @@ pa_pal_util_port_to_pal_device_mapping port_to_pal_device[] = {
+     { (char *)"speaker-mic",      PAL_DEVICE_IN_SPEAKER_MIC,            (char *)"PAL_DEVICE_IN_SPEAKER_MIC" },
+     { (char *)"headset-mic",      PAL_DEVICE_IN_WIRED_HEADSET,          (char *)"PAL_DEVICE_IN_WIRED_HEADSET" },
+     { (char *)"linein",           PAL_DEVICE_IN_LINE,                   (char *)"PAL_DEVICE_IN_LINE" },
+-    { (char *)"hdmi-out",         PAL_DEVICE_OUT_AUX_DIGITAL,           (char *)"PAL_DEVICE_OUT_AUX_DIGITAL" },
++    { (char *)"hdmi-out",         PAL_DEVICE_OUT_HDMI,                  (char *)"PAL_DEVICE_OUT_HDMI" },
+     { (char *)"bta2dp-in",        PAL_DEVICE_IN_BLUETOOTH_A2DP,         (char *)"PAL_DEVICE_IN_BLUETOOTH_A2DP" },
+     { (char *)"btsco-in",         PAL_DEVICE_IN_BLUETOOTH_SCO_HEADSET,  (char *)"PAL_DEVICE_IN_BLUETOOTH_SCO_HEADSET" },
+     { (char *)"btsco-out",        PAL_DEVICE_OUT_BLUETOOTH_SCO,         (char *)"PAL_DEVICE_OUT_BLUETOOTH_SCO" },

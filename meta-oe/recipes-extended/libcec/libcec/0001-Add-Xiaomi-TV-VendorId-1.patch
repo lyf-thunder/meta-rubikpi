@@ -1,0 +1,13 @@
+diff --git a/src/libcec/CECTypeUtils.h b/src/libcec/CECTypeUtils.h
+index a3e27fd..8e4084e 100644
+--- a/src/libcec/CECTypeUtils.h
++++ b/src/libcec/CECTypeUtils.h
+@@ -533,6 +533,8 @@ namespace CEC
+         return "Pulse Eight";
+       case CEC_VENDOR_GOOGLE:
+         return "Google";
++      case CEC_VENDOR_XIAOMI:
++        return "Xiao Mi";
+       default:
+         return "Unknown";
+       }

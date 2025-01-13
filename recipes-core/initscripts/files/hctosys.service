@@ -1,0 +1,10 @@
+[Unit]
+SourcePath=/etc/initscripts/hctosys.sh
+Description=Rubik Pi RTC service
+
+[Service]
+ExecStart=/etc/initscripts/hctosys.sh
+ExecStop=/etc/initscripts/hctosys.sh
+
+[Install]
+WantedBy=multi-user.target

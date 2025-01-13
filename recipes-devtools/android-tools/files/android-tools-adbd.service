@@ -1,0 +1,14 @@
+[Unit]
+Description=Android Debug Bridge
+ConditionPathExists=/var/usb-debugging-enabled
+Before=android-system.service
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStartPre=-/usr/bin/android-gadget-setup adb
+ExecStart=/usr/bin/adbd
+Environment=TERM=linux
+
+[Install]
+WantedBy=basic.target

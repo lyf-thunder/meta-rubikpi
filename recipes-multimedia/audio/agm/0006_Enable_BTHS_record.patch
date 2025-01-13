@@ -1,0 +1,13 @@
+diff --git a/plugins/tinyalsa/test/backend_conf.xml b/plugins/tinyalsa/test/backend_conf.xml
+index 7675f95..e90735f 100644
+--- a/plugins/tinyalsa/test/backend_conf.xml
++++ b/plugins/tinyalsa/test/backend_conf.xml
+@@ -62,7 +62,7 @@
+     <device name="MI2S-LPAIF_RXTX-RX-0" rate="48000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF_RXTX-TX-PRIMARY" rate="48000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF_VA-RX-PRIMARY" rate="48000" ch="1" bits="16" />
+-    <device name="MI2S-LPAIF_VA-TX-PRIMARY" rate="48000" ch="1" bits="16" />
++    <device name="MI2S-LPAIF_VA-TX-PRIMARY" rate="16000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF_WSA-RX-PRIMARY" rate="48000" ch="1" bits="16" />
+     <device name="MI2S-LPAIF_WSA-TX-PRIMARY" rate="48000" ch="1" bits="16" />
+     <device name="TDM-LPAIF-RX-PRIMARY" rate="48000" ch="1" bits="16" />

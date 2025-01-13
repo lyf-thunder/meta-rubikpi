@@ -1,0 +1,12 @@
+diff --git a/include/cectypes.h b/include/cectypes.h
+index e585f2f..afd2cb1 100644
+--- a/include/cectypes.h
++++ b/include/cectypes.h
+@@ -874,6 +874,7 @@ typedef enum cec_vendor_id
+   CEC_VENDOR_VIZIO          = 0x6B746D,
+   CEC_VENDOR_BENQ           = 0x8065E9,
+   CEC_VENDOR_HARMAN_KARDON  = 0x9C645E,
++  CEC_VENDOR_XIAOMI         = 0xACF7F3,
+   CEC_VENDOR_UNKNOWN        = 0
+ } cec_vendor_id;
+ 

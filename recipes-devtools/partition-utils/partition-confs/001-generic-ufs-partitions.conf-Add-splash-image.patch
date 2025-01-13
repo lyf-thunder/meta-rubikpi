@@ -1,0 +1,13 @@
+diff --git a/generic-ufs-partitions.conf b/generic-ufs-partitions.conf
+index 08fa2ef..d98d8f6 100644
+--- a/generic-ufs-partitions.conf
++++ b/generic-ufs-partitions.conf
+@@ -92,7 +92,7 @@
+ --partition --lun=4 --name=devinfo --size=4KB --type-guid=65ADDCF4-0C5C-4D9A-AC2D-D90B5CBFCD03
+ --partition --lun=4 --name=dip --size=1024KB --type-guid=4114B077-005D-4E12-AC8C-B493BDA684FB
+ --partition --lun=4 --name=apdp --size=256KB --type-guid=E6E98DA2-E22A-4D12-AB33-169E7DEAA507
+---partition --lun=4 --name=splash --size=33424KB --type-guid=AD99F201-DC71-4E30-9630-E19EEF553D1B
++--partition --lun=4 --name=splash --size=33424KB --type-guid=AD99F201-DC71-4E30-9630-E19EEF553D1B  --filename=splash.img
+ --partition --lun=4 --name=limits --size=4KB --type-guid=10A0C19C-516A-5444-5CE3-664C3226A794
+ --partition --lun=4 --name=limits-cdsp --size=4KB --type-guid=545D3707-8329-40E8-8B5E-3E554CBDC786
+ --partition --lun=4 --name=logfs --size=8192KB --type-guid=BC0330EB-3410-4951-A617-03898DBE3372 --filename=logfs_ufs_8mb.bin
