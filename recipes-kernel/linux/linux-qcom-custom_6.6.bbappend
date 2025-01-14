@@ -7,3 +7,9 @@ SRC_URI = "file://kernel-6.6;protocol=file;name=git \
            ${@bb.utils.contains('DISTRO_FEATURES', 'selinux', ' file://selinux_debug.cfg', '', d)} \
            "
 S = "${WORKDIR}/kernel-6.6"
+
+do_configure:append() {
+    kernel_conf_variable LOCALVERSION ""
+    kernel_conf_variable LOCALVERSION_AUTO n
+    oe_runmake -C ${S} O=${B} savedefconfig && cp ${B}/defconfig ${WORKDIR}/defconfig.saved
+}
