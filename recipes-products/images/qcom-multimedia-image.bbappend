@@ -29,3 +29,22 @@ EXTRA_USERS_PARAMS = "\
     "
 
 EXTRA_IMAGE_FEATURES += "tools-sdk"
+
+do_deploy_fixup:append() {
+    # copy RubikPi3_CDT.bin
+    if [ -f ${DEPLOY_DIR_IMAGE}/RubikPi3_CDT.bin ]; then
+        install -m 0644 ${DEPLOY_DIR_IMAGE}/RubikPi3_CDT.bin RubikPi3_CDT.bin
+    fi
+    # copy initramfs-ostree-image-qcm6490-idp.cpio.gz
+    if [ -f ${DEPLOY_DIR_IMAGE}/initramfs-ostree-image-qcm6490-idp.cpio.gz ]; then
+        install -m 0644 ${DEPLOY_DIR_IMAGE}/initramfs-ostree-image-qcm6490-idp.cpio.gz initramfs-ostree-image-qcm6490-idp.cpio.gz
+    fi
+    # copy ukify
+    # if [ -f ${DEPLOY_DIR_IMAGE}/initramfs-ostree-image-qcm6490-idp.cpio.gz ]; then
+    #     install -m 0644 ${DEPLOY_DIR_IMAGE}/initramfs-ostree-image-qcm6490-idp.cpio.gz initramfs-ostree-image-qcm6490-idp.cpio.gz
+    # fi
+    # copy linuxaa64.efi.stub
+    if [ -f ${DEPLOY_DIR_IMAGE}/linuxaa64.efi.stub ]; then
+        install -m 0644 ${DEPLOY_DIR_IMAGE}/linuxaa64.efi.stub linuxaa64.efi.stub
+    fi
+}
