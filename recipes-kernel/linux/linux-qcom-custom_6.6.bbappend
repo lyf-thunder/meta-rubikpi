@@ -13,3 +13,5 @@ do_configure:append() {
     kernel_conf_variable LOCALVERSION_AUTO n
     oe_runmake -C ${S} O=${B} savedefconfig && cp ${B}/defconfig ${WORKDIR}/defconfig.saved
 }
+
+KERNEL_CONFIG_FRAGMENTS:append = " ${S}/arch/arm64/configs/rubikpi3.config"
