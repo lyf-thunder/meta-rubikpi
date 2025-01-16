@@ -1,0 +1,2 @@
+KERNEL=="sd[i-z][0-9]*", SUBSYSTEM=="block", ACTION=="add", RUN+="/bin/systemctl start usbstorage-mount@%k.service"
+KERNEL=="sd[i-z][0-9]*", SUBSYSTEM=="block", ACTION=="remove", RUN+="/bin/systemctl stop usbstorage-mount@%k.service"
