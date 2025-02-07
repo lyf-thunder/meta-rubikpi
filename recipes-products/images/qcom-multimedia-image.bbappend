@@ -8,6 +8,8 @@ CORE_IMAGE_BASE_INSTALL += " \
 	ax88179bprogrammer \
 	packagegroup-qt5-toolchain-target \
 "
+
+IMAGE_INSTALL:append = " hostapd"
 IMAGE_INSTALL:append = " i2c-tools"
 IMAGE_INSTALL:append = " minicom"
 IMAGE_INSTALL:append = " make cmake"
