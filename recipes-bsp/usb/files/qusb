@@ -605,7 +605,7 @@ usb_init() {
 
 	echo "Qualcomm" > strings/0x409/manufacturer
 
-	serialno="$(rw_reservepartition r serialno)"
+	serialno="$(rw_reservepartition r piserialno)"
 	if [ ! "$serialno" ]; then
 		serialno="$(printf "%x" "$(cat /sys/devices/soc0/serial_number)")"
 		if [ ! "$serialno" ]; then
