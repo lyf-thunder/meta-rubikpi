@@ -23,8 +23,7 @@ IMAGE_INSTALL:append = " libcec"
 IMAGE_INSTALL:append = " cec-client"
 IMAGE_INSTALL:append = " qcom-adreno"
 IMAGE_INSTALL:append = " sip3 python3-pyqt5 python3-pyqtchart python3-pytest-qt"
-
-CORE_IMAGE_EXTRA_INSTALL += " ros-core turtlesim  "
+IMAGE_INSTALL:append = " ros-core turtlesim"
 
 EXTRA_USERS_PARAMS = "\
     useradd -r -s /bin/false system; \
