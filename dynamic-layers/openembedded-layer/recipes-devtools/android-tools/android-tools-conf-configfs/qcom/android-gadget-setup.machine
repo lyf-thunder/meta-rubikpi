@@ -1,0 +1,5 @@
+manufacturer=Qualcomm
+model=`hostname`
+androidserial="$(rw_reservepartition r piserialno)"
+[ -n "$androidserial" ] && serial="$androidserial"
+true
