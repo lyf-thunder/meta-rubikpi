@@ -328,7 +328,6 @@ void ethernet_mac_format(char *mac_addr) {
 
 int read_reserve_partition(char *ptype, int rw, void *data) {
     int fd = -1;
-    int ret = -1;
     int type = -1;
     reserveinfo *reserve_buf;
 
@@ -402,7 +401,7 @@ int read_reserve_partition(char *ptype, int rw, void *data) {
     }
     free(reserve_buf);
     close(fd);
-    return ret;
+    return 0;
 }
 
 int write_ciphertext_to_partition(char *ciphertext) {
@@ -494,18 +493,34 @@ operation_err:
 // rw_reservepartition r serialno //For read
 // rw_reservepartition w serialno  content //For write
 int main(int argc, char *argv[]) {
+    int ret = 0;
     if (argc < 3) {
       printf("Please input right parameters\n");
     }
     if (3 == argc && 'r' == argv[1][0]) {
-      return read_reserve_partition(argv[2], 0, NULL);
+      ret = read_reserve_partition(argv[2], 0, NULL);
+      if (ret < 0) {
+        return -1;
+      } else {
+        return 0;
+      }
     } else if (4 == argc && 'w' == argv[1][0]) {
       // Set serialno to lun3
       if (strlen(argv[3]) <= SERIALNO_LEN) {
-        return write_reserve_partition(argv[2], 1, argv[3]);
+        ret = write_reserve_partition(argv[2], 1, argv[3]);
+        if (ret < 0) {
+          return -1;
+        } else {
+          return 0;
+        }
       }
     } else if (3 == argc && 's' == argv[1][0]) {
-        return write_ciphertext_to_partition(argv[2]);
+        ret = write_ciphertext_to_partition(argv[2]);
+        if (ret < 0) {
+           return -1;
+        } else {
+           return 0;
+        }
     } else {
       printf("Please input right parameters \n");
     }
