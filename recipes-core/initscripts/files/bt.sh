@@ -16,7 +16,7 @@ start() {
     done
 
     echo 1 > $NODE
-    cd /usr/src/rubikpi-bt-demo/
+    cd /usr/src/rubikpi-btapp/
     ./bsa_server -d /dev/ttyHS2 -p ./BCM4345C5_003.006.006.1081.1154.hcd -r 13 -pcmint 31100 -pcmi2s=1011
 }
 
