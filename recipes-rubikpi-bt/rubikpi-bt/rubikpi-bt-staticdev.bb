@@ -27,12 +27,12 @@ do_install() {
 	install -d ${D}/usr/src/rubikpi-btapp/test_files/ag
 
 	cp -r ${WORKDIR}/files/3rdparty ${D}/usr/src/rubikpi-bt-demo/3rdparty
-	cp -r ${WORKDIR}/files/app_manager ${D}/usr/src/rubikpi-bt-demo/app_manager
-	cp -r ${WORKDIR}/files/app_av ${D}/usr/src/rubikpi-bt-demo/app_av
-	cp -r ${WORKDIR}/files/app_ag ${D}/usr/src/rubikpi-bt-demo/app_ag
-	cp -r ${WORKDIR}/files/app_ble ${D}/usr/src/rubikpi-bt-demo/app_ble
-	cp -r ${WORKDIR}/files/app_opc ${D}/usr/src/rubikpi-bt-demo/app_opc
-	cp -r ${WORKDIR}/files/app_ops ${D}/usr/src/rubikpi-bt-demo/app_ops
+	cp -r ${WORKDIR}/files/app_manager ${D}/usr/src/rubikpi-btapp/app_manager
+	cp -r ${WORKDIR}/files/app_av ${D}/usr/src/rubikpi-btapp/app_av
+	cp -r ${WORKDIR}/files/app_ag ${D}/usr/src/rubikpi-btapp/app_ag
+	cp -r ${WORKDIR}/files/app_ble ${D}/usr/src/rubikpi-btapp/app_ble
+	cp -r ${WORKDIR}/files/app_opc ${D}/usr/src/rubikpi-btapp/app_opc
+	cp -r ${WORKDIR}/files/app_ops ${D}/usr/src/rubikpi-btapp/app_ops
         
 	cp -r ${WORKDIR}/files/src ${D}/usr/src/rubikpi-btapp/src
 	cp -r ${WORKDIR}/files/rubikpi_btapp ${D}/usr/src/rubikpi-btapp/rubikpi_btapp
