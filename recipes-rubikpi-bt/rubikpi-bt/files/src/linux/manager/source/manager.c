@@ -42,13 +42,13 @@
 /* Default COD SetTopBox (Major Service = none) (MajorDevclass = Audio/Video) (Minor=STB) */
 #define APP_DEFAULT_CLASS_OF_DEVICE     {0x00, 0x04, 0x24}
 
-#define APP_DEFAULT_ROOT_PATH           "./pictures"
+#define APP_DEFAULT_ROOT_PATH           "/usr/src/rubikpi-btapp/pictures"
 
 #define APP_DEFAULT_PIN_CODE            "0000"
 #define APP_DEFAULT_PIN_LEN             4
 
-#define APP_XML_CONFIG_FILE_PATH            "./bt_config.xml"
-#define APP_XML_REM_DEVICES_FILE_PATH       "./bt_devices.xml"
+#define APP_XML_CONFIG_FILE_PATH            "/usr/src/rubikpi-btapp/bt_config.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH       "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 /*
  * Simple Pairing Input/Output Capabilities:

@@ -30,7 +30,7 @@
 #include "nanoxml.h"
 
 #ifndef tAPP_BLE_CLIENT_XML_FILENAME
-#define tAPP_BLE_CLIENT_XML_FILENAME "./bt_ble_client_devices.xml"
+#define tAPP_BLE_CLIENT_XML_FILENAME "/usr/src/rubikpi-btapp/bt_ble_client_devices.xml"
 #endif
 
 #define APP_BLE_CLIENT_XML_TAG_ROOT "Broadcom_Bluetooth_BLE_Devices"

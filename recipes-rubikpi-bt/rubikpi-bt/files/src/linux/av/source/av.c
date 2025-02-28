@@ -70,9 +70,9 @@
 /* Size of the audio buffer */
 #define APP_AV_MAX_AUDIO_BUF 256
 /* Name of the XML file containing the saved remote devices */
-#define APP_AV_REMOTE_DEVICES_XML_FILE "./bt_devices.xml"
+#define APP_AV_REMOTE_DEVICES_XML_FILE "/usr/src/rubikpi-btapp/bt_devices.xml"
 /* Name of the default sound file */
-#define APP_AV_SOUND_FILE "./test.wav"
+#define APP_AV_SOUND_FILE "/usr/src/rubikpi-btapp/test.wav"
 
 /* Min and Max UIPC parameters (Period and Length) */
 #define APP_AV_PERIOD_MIN      (BSA_AV_MIN_SYNCHRONOUS_LATENCY*1000) /* convert ms to us */
@@ -3998,7 +3998,7 @@ int app_av_init(BOOLEAN boot)
     app_av_cb.uipc_cfg.is_blocking = TRUE;
 
     /* Initialize and create a playlist from the local folder */
-    app_init_playlist("./test_files/av");
+    app_init_playlist("/usr/src/rubikpi-btapp/test_files/av");
     if (app_av_cb.soundfile_list_size > 0)
     {
         APP_INFO1("app_av_cb.soundfile_list_size:%d", app_av_cb.soundfile_list_size);

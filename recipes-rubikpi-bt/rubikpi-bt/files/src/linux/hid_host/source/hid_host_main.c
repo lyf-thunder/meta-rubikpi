@@ -34,7 +34,7 @@
 #include "bsa_mgt_api.h"
 
 
-#define APP_XML_REM_DEVICES_FILE_PATH "./bt_devices.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 
 /* Menu items */

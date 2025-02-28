@@ -35,7 +35,7 @@
 #define APP_HH_DEVICE_MAX               10
 #endif
 
-#define APP_HH_VOICE_FILE_NAME_FORMAT   "./app_hh_voice_%u.wav"
+#define APP_HH_VOICE_FILE_NAME_FORMAT   "/usr/src/rubikpi-btapp/app_hh_voice_%u.wav"
 
 /* Information mask of the HH devices */
 #define APP_HH_DEV_USED     0x01    /* Indicates if this element is allocated */

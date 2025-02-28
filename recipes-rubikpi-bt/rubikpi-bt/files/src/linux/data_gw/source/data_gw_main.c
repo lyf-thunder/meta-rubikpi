@@ -19,7 +19,7 @@
 #include "app_disc.h"
 #include "app_xml_param.h"
 
-#define APP_DG_TEST_FILE "./test_files/dg/tx_test_file.txt"
+#define APP_DG_TEST_FILE "/usr/src/rubikpi-btapp/test_files/dg/tx_test_file.txt"
 
 /*
  * Global Variables

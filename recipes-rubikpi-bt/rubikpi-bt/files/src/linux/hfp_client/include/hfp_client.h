@@ -33,7 +33,7 @@ enum
     BSA_HS_CALL_CONN
 };
 
-#define APP_HS_SCO_IN_SOUND_FILE    "./sco_in.wav"
+#define APP_HS_SCO_IN_SOUND_FILE    "/usr/src/rubikpi-btapp/sco_in.wav"
 #define APP_HS_SCO_OUT_SOUND_FILE    APP_HS_SCO_IN_SOUND_FILE
 
 /* call indicator values */

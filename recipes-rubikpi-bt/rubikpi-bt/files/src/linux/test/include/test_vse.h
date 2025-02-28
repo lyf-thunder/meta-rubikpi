@@ -23,7 +23,7 @@
  * Definitions
  */
 #ifndef APP_TM_VSE_FW_CORE_DUMP_FILENAME
-#define APP_TM_VSE_FW_CORE_DUMP_FILENAME    "./fw_core_dump.log"
+#define APP_TM_VSE_FW_CORE_DUMP_FILENAME    "/usr/src/rubikpi-btapp/fw_core_dump.log"
 #endif
 
 /* Vendor Specific Sub-Events */

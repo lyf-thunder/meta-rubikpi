@@ -40,7 +40,7 @@
  * Defines
  */
 
-#define APP_XML_REM_DEVICES_FILE_PATH "./bt_devices.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 #define APP_AVK_SOUND_FILE "test_avk"
 

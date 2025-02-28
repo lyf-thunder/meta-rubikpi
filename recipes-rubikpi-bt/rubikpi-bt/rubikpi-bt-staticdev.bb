@@ -25,6 +25,8 @@ do_install() {
 	install -d ${D}/usr/src/rubikpi-btapp/src
 	install -d ${D}/usr/src/rubikpi-btapp/test_files/av
 	install -d ${D}/usr/src/rubikpi-btapp/test_files/ag
+        install -d ${D}${bindir}
+        install -m 0755 ${WORKDIR}/files/rubikpi_btapp ${D}${bindir}/
 
 	cp -r ${WORKDIR}/files/3rdparty ${D}/usr/src/rubikpi-bt-demo/3rdparty
 	cp -r ${WORKDIR}/files/app_manager ${D}/usr/src/rubikpi-btapp/app_manager

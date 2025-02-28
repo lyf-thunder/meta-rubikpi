@@ -74,7 +74,7 @@ enum
 
 #define APP_HS_MAX_AUDIO_BUF 240
 
-#define APP_HS_XML_REM_DEVICES_FILE_PATH       "./bt_devices.xml"
+#define APP_HS_XML_REM_DEVICES_FILE_PATH       "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 /*
  * Types

@@ -20,7 +20,7 @@
  * Definitions
  */
 #ifndef APP_DEFAULT_UIPC_PATH
-#define APP_DEFAULT_UIPC_PATH "./"
+#define APP_DEFAULT_UIPC_PATH "/usr/src/rubikpi-btapp/"
 #endif
 
 /* Management Custom Callback */

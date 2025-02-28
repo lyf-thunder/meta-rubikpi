@@ -56,7 +56,7 @@ tBSA_STATUS app_ops_auto_accept(void)
     ops_access_resp_param.oper = BSA_OP_OPER_PUSH;
     ops_access_resp_param.access = BSA_OP_ACCESS_EN_AUTO;
     snprintf(ops_access_resp_param.object_name, sizeof(ops_access_resp_param.object_name) - 1,
-            "./push/");
+            "/usr/src/rubikpi-btapp/push/");
 
     printf("app_ops_auto_accept\n");
 
@@ -76,7 +76,7 @@ tBSA_STATUS app_ops_auto_accept(void)
     ops_access_resp_param.oper = BSA_OP_OPER_PULL;
     ops_access_resp_param.access = BSA_OP_ACCESS_EN_AUTO;
     snprintf(ops_access_resp_param.object_name, sizeof(ops_access_resp_param.object_name) - 1,
-            "./pull/Abdul Iqbal.vcf");
+            "/usr/src/rubikpi-btapp/pull/Abdul Iqbal.vcf");
 
     printf("app_ops Auto - oper:%x access:%x Name:%s\n",
             ops_access_resp_param.oper, ops_access_resp_param.access,
@@ -145,7 +145,7 @@ void app_access_resp_ops(tBSA_OPS_MSG *ops_access_req_param)
             if (auto_access_push == FALSE)
             {
                 snprintf(ops_access_resp_param.object_name,
-                        sizeof(ops_access_resp_param.object_name) - 1, "./push/%s",
+                        sizeof(ops_access_resp_param.object_name) - 1, "/usr/src/rubikpi-btapp/push/%s",
                         ops_access_req_param->access.p_name);
                 break;
             }
@@ -153,7 +153,7 @@ void app_access_resp_ops(tBSA_OPS_MSG *ops_access_req_param)
             if (auto_access_pull == FALSE)
             {
                 snprintf(ops_access_resp_param.object_name,
-                        sizeof(ops_access_resp_param.object_name) - 1, "./pull/test_card.vcf");
+                        sizeof(ops_access_resp_param.object_name) - 1, "/usr/src/rubikpi-btapp/pull/test_card.vcf");
 
                 break;
             }

@@ -37,7 +37,7 @@ extern void app_management_callback(tBSA_MGT_EVT event, tBSA_MGT_MSG *p_data);
 extern int app_read_xml_remote_devices(void);
 extern int app_write_xml_remote_devices(void);
 
-#define APP_XML_REM_DEVICES_FILE_PATH "./bt_devices.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 
 /* Menu items */

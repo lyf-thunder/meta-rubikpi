@@ -19,7 +19,7 @@
 #include "app_utils.h"
 
 #ifndef tAPP_HH_XML_FILENAME
-#define tAPP_HH_XML_FILENAME "./bt_hh_devices.xml"
+#define tAPP_HH_XML_FILENAME "/usr/src/rubikpi-btapp/bt_hh_devices.xml"
 #endif
 
 #define APP_HH_XML_TAG_ROOT "Broadcom_Bluetooth_HID_Devices"

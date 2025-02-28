@@ -41,7 +41,7 @@ enum
     OPP_MENU_OPC_KEY_DISC
 };
 
-#define OPP_TEST_FILE_PATH "./test_file.txt"
+#define OPP_TEST_FILE_PATH "/usr/src/rubikpi-btapp/test_file.txt"
 /*******************************************************************************
  **
  ** Function         opp_mgt_callback

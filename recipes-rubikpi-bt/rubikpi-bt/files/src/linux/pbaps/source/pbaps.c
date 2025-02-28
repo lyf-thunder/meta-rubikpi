@@ -1184,7 +1184,7 @@ static BOOLEAN get_next_vcard_by_name(char *path, int *index_list, int *num_inde
 static char * uid_to_file(char *uid)
 {
     /* hardcoded file name for testing purpose only */
-    return "./telecom/pb/0.vcf";
+    return "/usr/src/rubikpi-btapp/telecom/pb/0.vcf";
 }
 
 /*******************************************************************************

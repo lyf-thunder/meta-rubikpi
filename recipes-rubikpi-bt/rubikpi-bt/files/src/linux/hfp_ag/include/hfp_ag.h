@@ -29,9 +29,9 @@ extern "C"
 #endif
 
 #define APP_AG_MAX_NUM_CONN    1
-#define APP_AG_SCO_IN_SOUND_FILE    "./test_files/ag/sco_ag_in.wav"
-#define APP_AG_SCO_OUT_SOUND_FILE   "./test_files/ag/sco_ag_out.wav"
-#define APP_AG_SCO_OUT_SOUND_FILE_16K   "./test_files/ag/sco_ag_out_16k.wav"
+#define APP_AG_SCO_IN_SOUND_FILE    "/usr/src/rubikpi-btapp/test_files/ag/sco_ag_in.wav"
+#define APP_AG_SCO_OUT_SOUND_FILE   "/usr/src/rubikpi-btapp/test_files/ag/sco_ag_out.wav"
+#define APP_AG_SCO_OUT_SOUND_FILE_16K   "/usr/src/rubikpi-btapp/test_files/ag/sco_ag_out_16k.wav"
 
 #define APP_AG_SAMPLE_CONVERT_NO    0
 #define APP_AG_SAMPLE_CONVERT_UP    1

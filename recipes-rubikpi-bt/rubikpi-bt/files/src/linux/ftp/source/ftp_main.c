@@ -29,10 +29,10 @@
 
 #include "app_disc.h"
 
-#define APP_TEST_FILE_PATH "./test_file.txt"
-#define APP_TEST_FILE_PATH1 "./test_file1.txt"
-#define APP_TEST_FILE_PATH2 "./test_file2.txt"
-#define APP_TEST_FILE_PATH3 "./test_file3.txt"
+#define APP_TEST_FILE_PATH "/usr/src/rubikpi-btapp/test_file.txt"
+#define APP_TEST_FILE_PATH1 "/usr/src/rubikpi-btapp/test_file1.txt"
+#define APP_TEST_FILE_PATH2 "/usr/src/rubikpi-btapp/test_file2.txt"
+#define APP_TEST_FILE_PATH3 "/usr/src/rubikpi-btapp/test_file3.txt"
 #define APP_TEST_DIR "test_dir"
 
 
@@ -193,10 +193,10 @@ int ftp_menu_handle(void)
             app_ftc_rm_file(APP_TEST_FILE_PATH);
             break;
         case APP_FTC_KEY_LS:
-            app_ftc_list_dir("./",FALSE);
+            app_ftc_list_dir("/usr/src/rubikpi-btapp/",FALSE);
             break;
         case APP_FTC_KEY_LS_XML:
-            app_ftc_list_dir("./", TRUE);
+            app_ftc_list_dir("/usr/src/rubikpi-btapp/", TRUE);
             break;
         case APP_FTC_KEY_CLOSE:
             app_ftc_close();

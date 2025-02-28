@@ -20,7 +20,7 @@
 #include "app_mgt.h"
 #include "app_xml_utils.h"
 
-#define APP_TEST_FILE_PATH "./test_file.txt"
+#define APP_TEST_FILE_PATH "/usr/src/rubikpi-btapp/test_file.txt"
 
 /* ui keypress definition */
 #define APP_OPC_KEY_PUSH        1

@@ -30,7 +30,7 @@
 #include "nanoxml.h"
 
 #ifndef tAPP_HL_XML_FILENAME
-#define tAPP_HL_XML_FILENAME "./bt_hl_devices.xml"
+#define tAPP_HL_XML_FILENAME "/usr/src/rubikpi-btapp/bt_hl_devices.xml"
 #endif
 
 #define APP_HL_ROOT_KEY                 "Broadcom_Bluetooth_Health_MDL"

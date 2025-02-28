@@ -26,10 +26,10 @@
 #include "app_utils.h"
 #include "opc.h"
 
-#define APP_MY_VCARD_PATH "./my_vcard.vcf"
-#define APP_YOUR_VCARD_PATH "./"
+#define APP_MY_VCARD_PATH "/usr/src/rubikpi-btapp/my_vcard.vcf"
+#define APP_YOUR_VCARD_PATH "/usr/src/rubikpi-btapp/"
 
-#define APP_XML_REM_DEVICES_FILE_PATH       "./bt_devices.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH       "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 /*
  * Globales Variables

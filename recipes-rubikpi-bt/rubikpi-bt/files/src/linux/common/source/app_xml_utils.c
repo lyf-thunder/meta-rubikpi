@@ -28,9 +28,9 @@
 #define APP_XML_TAG_SUFFIX_CR APP_XML_TAG_SUFFIX APP_XML_CR
 #define APP_XML_TAG_OPEN_CLOSE_SUFFIX "/" APP_XML_TAG_SUFFIX_CR
 
-#define APP_XML_CONFIG_FILE_PATH            "./bt_config.xml"
-#define APP_XML_REM_DEVICES_FILE_PATH       "./bt_devices.xml"
-#define APP_XML_SI_DEVICES_FILE_PATH        "./si_devices.xml"
+#define APP_XML_CONFIG_FILE_PATH            "/usr/src/rubikpi-btapp/bt_config.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH       "/usr/src/rubikpi-btapp/bt_devices.xml"
+#define APP_XML_SI_DEVICES_FILE_PATH        "/usr/src/rubikpi-btapp/si_devices.xml"
 
 /*
  * Global Variables

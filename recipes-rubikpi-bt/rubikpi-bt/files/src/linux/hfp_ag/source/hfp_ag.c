@@ -36,7 +36,7 @@
                           BSA_AG_FEAT_VREC | BSA_AG_FEAT_ECS |  \
                           BSA_AG_FEAT_ECC | BSA_AG_FEAT_CODEC | BSA_AG_FEAT_ESCO)
 
-#define APP_AG_XML_REM_DEVICES_FILE_PATH "./bt_devices.xml"
+#define APP_AG_XML_REM_DEVICES_FILE_PATH "/usr/src/rubikpi-btapp/bt_devices.xml"
 //#define APP_MAX_AUDIO_BUF 240
 
 /*

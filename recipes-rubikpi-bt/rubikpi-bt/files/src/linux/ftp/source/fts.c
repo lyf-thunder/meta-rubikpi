@@ -210,7 +210,7 @@ tBSA_STATUS app_start_fts(char * p_root_path)
     }
     else
     {
-        strncpy(enable_param.root_path, "./fts_root", sizeof(enable_param.root_path)-1);
+        strncpy(enable_param.root_path, "/usr/src/rubikpi-btapp/fts_root", sizeof(enable_param.root_path)-1);
     }
 
     enable_param.enable_authen = FALSE;

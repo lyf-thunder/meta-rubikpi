@@ -33,7 +33,7 @@ extern int app_get_menu_choice (void);
 extern int app_read_xml_remote_devices(void);
 extern int app_write_xml_remote_devices(void);
 
-#define APP_XML_REM_DEVICES_FILE_PATH       "./bt_devices.xml"
+#define APP_XML_REM_DEVICES_FILE_PATH       "/usr/src/rubikpi-btapp/bt_devices.xml"
 
 #define APP_HL_TEST_FILE  "test_files/hl/tx_test_file.txt"
 

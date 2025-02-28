@@ -32,11 +32,11 @@
 #include "menu.h"
 #include "main.h"
 
-
+#define BTAPP_VERSION "1.0.0"
 
 int g_MGR_Init = 0;
 
-#define RUBIKPI_BTAPP_CONFIG_FILE "./rubikpi_btapp.conf"
+#define RUBIKPI_BTAPP_CONFIG_FILE "/usr/src/rubikpi-btapp/rubikpi_btapp.conf"
 #define BUFFER_SIZE 1024
 
 int main_menu_item_enable_init(void)
@@ -209,10 +209,18 @@ static void DisplayMenu(int menu_type) {
  ** Returns          void
  **
  *******************************************************************************/
-int main(void)
+int main(int argc, char **argv)
 {
     int choice =1;
     int ret;
+    if(argc > 1)
+    {
+        if(strcmp(argv[1],"-v") == 0)
+        {
+            APP_INFO1("Version:%s", BTAPP_VERSION);
+        }
+        return 0;
+    }
 
     ret = main_menu_item_enable_init();
     if(ret != 0)
