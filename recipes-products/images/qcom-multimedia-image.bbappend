@@ -36,6 +36,11 @@ EXTRA_USERS_PARAMS = "\
 EXTRA_IMAGE_FEATURES += "tools-sdk"
 
 do_deploy_fixup:append() {
+    # copy splash.img
+    if [ -f ${DEPLOY_DIR_IMAGE}/splash.img ]; then
+        install -m 0644 ${DEPLOY_DIR_IMAGE}/splash.img splash.img
+    fi
+
     # copy rubikpi_dtso.img
     if [ -f ${DEPLOY_DIR_IMAGE}/rubikpi_config.img ]; then
         install -m 0644 ${DEPLOY_DIR_IMAGE}/rubikpi_config.img rubikpi_config.img
