@@ -28,6 +28,7 @@ IMAGE_INSTALL:append = " sip3 python3-pyqt5 python3-pyqtchart python3-pytest-qt"
 IMAGE_INSTALL:append = " ros-core turtlesim"
 IMAGE_INSTALL:append = " iotop lsof"
 IMAGE_INSTALL:append = " var-devcfg-mount"
+IMAGE_INSTALL:append = " wiringrp wiringrp-python wiringrp-gpio"
 
 EXTRA_USERS_PARAMS = "\
     useradd -r -s /bin/false system; \
