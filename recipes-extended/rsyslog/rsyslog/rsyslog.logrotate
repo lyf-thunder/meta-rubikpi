@@ -4,6 +4,7 @@
 {
         rotate 7
         daily
+		maxsize 500M
         missingok
         notifempty
         delaycompress
