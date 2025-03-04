@@ -8,6 +8,7 @@ CORE_IMAGE_BASE_INSTALL += " \
 	ax88179bprogrammer \
 	packagegroup-qt5-toolchain-target \
 	rubikpi-wifi \
+	rubikpi-config \
 	var-devcfg-mount \
 "
 
