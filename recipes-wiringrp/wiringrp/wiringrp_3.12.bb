@@ -36,5 +36,11 @@ do_install() {
 	ln -sf libwiringPiDev.so.${PV} libwiringPiDev.so
 }
 
+pkg_postinst:${PN}() {
+	if [ -z "$D" ]; then
+		ldconfig
+	fi
+}
+
 FILES_${PN} += "${libdir}"
 FILES_${PN} += "${includedir}"
