@@ -11,9 +11,6 @@ SRC_URI =  "${SRCPROJECT};branch=${SRCBRANCH}"
 
 S = "${WORKDIR}/git"
 
-do_configure() {
-}
-
 INSANE_SKIP:${PN} += "ldflags"
 
 do_compile() {
@@ -22,25 +19,20 @@ do_compile() {
 }
 
 do_install() {
-	install -d ${D}${libdir}
-	install -d ${D}${includedir}
+	install -d ${D}/usr/lib
+	install -d ${D}/usr/include
 
-	install -m 0755 ${S}/wiringPi/libwiringPi.so.* ${D}${libdir}
-	install -m 0644 ${S}/wiringPi/*.h ${D}${includedir}
+	cp -r ${S}/wiringPi/libwiringPi.so.${PV} ${D}/usr/lib/libwiringPi.so
+	cp -r ${S}/wiringPi/*.h ${D}/usr/include/
 
-	install -m 0755 ${S}/devLib/libwiringPiDev.so.* ${D}${libdir}
-	install -m 0644 ${S}/devLib/*.h ${D}${includedir}
-
-	cd ${D}${libdir}
-	ln -sf libwiringPi.so.${PV} libwiringPi.so
-	ln -sf libwiringPiDev.so.${PV} libwiringPiDev.so
+	cp -r ${S}/devLib/libwiringPiDev.so.${PV} ${D}/usr/lib/libwiringPiDev.so
+	cp -r ${S}/devLib/*.h ${D}/usr/include/
 }
 
-pkg_postinst:${PN}() {
-	if [ -z "$D" ]; then
-		ldconfig
-	fi
-}
+FILES:${PN}-dev = ""
 
-FILES_${PN} += "${libdir}"
-FILES_${PN} += "${includedir}"
+FILES:${PN} += " \
+	/usr/lib/libwiringPi.so \
+	/usr/lib/libwiringPiDev.so \
+"
+FILES:${PN} += "/usr/include/*.h"
