@@ -14,5 +14,4 @@ PACKAGES = "${PN}"
 
 RDEPENDS:${PN} = " \
     rubikpi3-dtbo \
-    turbox-c5430p-dtbo \
     "
