@@ -10,3 +10,9 @@ echo auto > /sys/bus/platform/devices/8c00000.usb/power/control
 echo "[RubikPi Boot Service]: remount /usr" > /dev/kmsg
 mount -o remount,rw /
 mount -o remount,rw /usr
+
+#bluetooth init
+hciattach -n -p ttyHS7 bcm43xx 3000000 noflow 0x0000
+
+
+

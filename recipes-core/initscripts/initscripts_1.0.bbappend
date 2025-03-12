@@ -32,7 +32,7 @@ do_install:append:qcom() {
 	# bt
 	install -m 0755 ${WORKDIR}/bt.sh ${D}${sysconfdir}/initscripts/bt.sh
 	install -m 0644 ${WORKDIR}/bt.service -D ${D}${systemd_unitdir}/system/bt.service
-	ln -sf ${systemd_unitdir}/system/bt.service ${D}${systemd_unitdir}/system/multi-user.target.wants/bt.service
+	# ln -sf ${systemd_unitdir}/system/bt.service ${D}${systemd_unitdir}/system/multi-user.target.wants/bt.service
 
 	# wifi
 	install -m 0755 ${WORKDIR}/wifi.sh ${D}${sysconfdir}/initscripts/wifi.sh

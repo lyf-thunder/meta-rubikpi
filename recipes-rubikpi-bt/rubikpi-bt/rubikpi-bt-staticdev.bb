@@ -25,8 +25,9 @@ do_install() {
 	install -d ${D}/usr/src/rubikpi-btapp/src
 	install -d ${D}/usr/src/rubikpi-btapp/test_files/av
 	install -d ${D}/usr/src/rubikpi-btapp/test_files/ag
-        install -d ${D}${bindir}
-        install -m 0755 ${WORKDIR}/files/rubikpi_btapp ${D}${bindir}/
+	install -d ${D}${bindir}
+	install -m 0755 ${WORKDIR}/files/rubikpi_btapp ${D}${bindir}/
+	install -d ${D}/lib/firmware
 
 	cp -r ${WORKDIR}/files/3rdparty ${D}/usr/src/rubikpi-bt-demo/3rdparty
 	cp -r ${WORKDIR}/files/app_manager ${D}/usr/src/rubikpi-btapp/app_manager
@@ -41,6 +42,7 @@ do_install() {
 	cp -r ${WORKDIR}/files/rubikpi_btapp.conf ${D}/usr/src/rubikpi-btapp/rubikpi_btapp.conf
 	cp -r ${WORKDIR}/files/bsa_server ${D}/usr/src/rubikpi-btapp/bsa_server
 	cp -r ${WORKDIR}/files/BCM4345C5_003.006.006.1081.1154.hcd ${D}/usr/src/rubikpi-btapp/BCM4345C5_003.006.006.1081.1154.hcd
+	cp -r ${WORKDIR}/files/BCM4345C5_003.006.006.1081.1154.hcd ${D}/lib/firmware/BCM4345C5_003.006.006.1081.1154.hcd
 	cp -r ${WORKDIR}/files/2c.wav ${D}/usr/src/rubikpi-btapp/test_files/av/2c.wav
 	cp -r ${WORKDIR}/files/Remix_48K_2ch_16bit.wav ${D}/usr/src/rubikpi-btapp/test_files/av/Remix_48K_2ch_16bit.wav
 
@@ -52,6 +54,7 @@ FILES:${PN} += "/usr/src/rubikpi-bt-demo"
 FILES:${PN} += "/usr/src/rubikpi-bt-demo/3rdparty"
 FILES:${PN} += "/usr/src/rubikpi-btapp"
 FILES:${PN} += "/usr/src/rubikpi-btapp/src"
+FILES:${PN} += "/lib/firmware/BCM4345C5_003.006.006.1081.1154.hcd"
 
 
 deltask do_package_qa
