@@ -1,6 +1,7 @@
 [Unit]
 SourcePath=/etc/initscripts/rubikpi_boot.sh
 Description=Rubik Pi boot service
+After=var-devcfg.mount var-rubikpi_config.mount var-rubikpi_dtso.mount
 
 [Service]
 ExecStart=/etc/initscripts/rubikpi_boot.sh
