@@ -26,7 +26,12 @@ if [ ${heartbeat_switch} = "on" ]; then
 fi
 
 # bluetooth init
-hciattach -n -p ttyHS7 bcm43xx 3000000 noflow 0x0000
+bt_protocol_stack=$(grep "bt_protocol_stack=" "$CONFIG_FILE" | cut -d'=' -f2 | tr -d '"')
+if [ ${bt_protocol_stack} = "bsa" ]; then
+	systemctl start bt
+else
+	hciattach -n -p ttyHS7 bcm43xx 3000000 noflow 0x0000
+fi
 
 
 

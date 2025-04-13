@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = ""
 
 SRCPROJECT = "git://github.com/rubikpi-ai/tools.git;protocol=https"
 SRCBRANCH  = "rubikpi_config"
-SRCREV = "837653cc83e237f5ba82e4b7e3cf960583911e45"
+SRCREV = "9a3b15b51de826dcd32d763fbf3f09de2eb3a409"
 
 SRC_URI =  "${SRCPROJECT};branch=${SRCBRANCH}"
 
