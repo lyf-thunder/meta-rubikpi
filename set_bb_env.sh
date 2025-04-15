@@ -224,10 +224,6 @@ if [ -n "$FWZIP_PATH" ]; then
    echo -e "\n# FW zip path" >> ${BUILDDIR}/conf/local.conf
    echo "FWZIP_PATH = \"$FWZIP_PATH\"" >> ${BUILDDIR}/conf/local.conf
 fi
-# If BB_GIT_VERBOSE_FETCH is avilable update
-if [ -n "$BB_GIT_VERBOSE_FETCH" ]; then
-   sed -i "s/^BB_GIT_VERBOSE_FETCH = .*$/BB_GIT_VERBOSE_FETCH = \"$BB_GIT_VERBOSE_FETCH\"/g" ${BUILDDIR}/conf/local.conf
-fi
 
 # If BB_GIT_VERBOSE_FETCH is avilable update
 if [ -n "$BB_GIT_VERBOSE_FETCH" ]; then

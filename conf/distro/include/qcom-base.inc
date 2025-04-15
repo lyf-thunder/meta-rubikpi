@@ -1,6 +1,6 @@
 DISTRO_NAME = "Qualcomm Linux"
 
-DISTRO_VERSION = "1.3-ver.1.1"
+DISTRO_VERSION = "1.4-ver.1.1"
 
 # Extend the version string of the Linux kernel to indicate distro
 LINUX_VERSION_EXTENSION = "-qli-${DISTRO_VERSION}"
@@ -21,7 +21,7 @@ TARGET_VENDOR = "-qcom"
 # to make the python below work. Local, site and auto.conf will override it.
 TCMODE ?= "default"
 
-DISTRO_FEATURES:append = " pam overlayfs acl xattr selinux ptest security virtualization tpm usrmerge sota"
+DISTRO_FEATURES:append = " pam overlayfs acl xattr ptest security virtualization tpm usrmerge sota"
 
 # Use systemd init manager for system initialization.
 INIT_MANAGER = "systemd"
@@ -52,7 +52,7 @@ VOLATILE_LOG_DIR = "${@bb.utils.contains('PERFORMANCE_BUILD', '1', 'yes', 'no', 
 # Drop console from Kernel cmdline.
 CONSOLE_CMDLINE = "${@oe.utils.conditional('PERFORMANCE_BUILD','1','console=','console=ttyMSM0,115200n8 earlycon',d)}"
 # Disable serial console
-SERIAL_CONSOLES = "${@oe.utils.conditional('PERFORMANCE_BUILD','1','','115200;ttyMSM0',d)}"
+SERIAL_CONSOLES ?= "${@oe.utils.conditional('PERFORMANCE_BUILD','1','','115200;ttyMSM0',d)}"
 
 BUILDHISTORY_COMMIT = "1"
 
@@ -64,10 +64,10 @@ require conf/distro/include/yocto-uninative.inc
 INHERIT += "uninative"
 
 # GCC Version
-GCCVERSION = "11.5%"
+GCCVERSION = "13.3%"
 
 # Easily switch between rust versions just by changing RUST_VERSION variable
-RUST_VERSION ?= "1.73.0"
+RUST_VERSION ?= "1.75.0"
 
 PREFERRED_VERSION_cargo ?= "${RUST_VERSION}"
 PREFERRED_VERSION_cargo-native ?= "${RUST_VERSION}"
@@ -77,17 +77,6 @@ PREFERRED_VERSION_rust-cross-${TARGET_ARCH} ?= "${RUST_VERSION}"
 PREFERRED_VERSION_rust-llvm ?= "${RUST_VERSION}"
 PREFERRED_VERSION_rust-llvm-native ?= "${RUST_VERSION}"
 PREFERRED_VERSION_rust-native ?= "${RUST_VERSION}"
-
-# Selinux support
-DISTRO_FEATURES_FILTER_NATIVE:append = " selinux"
-DISTRO_FEATURES_FILTER_NATIVESDK:append = " selinux"
-DISTRO_EXTRA_RDEPENDS:append = " ${@bb.utils.contains('DISTRO_FEATURES','selinux', 'packagegroup-selinux-minimal', '', d)}"
-PREFERRED_PROVIDER_virtual/refpolicy = "refpolicy-targeted"
-
-# Disable selinux in default
-DEFAULT_ENFORCING ?= "disabled"
-
-IMAGE_CMD_TAR:append = "${@bb.utils.contains('DISTRO_FEATURES','selinux', ' --selinux', '', d)}"
 
 # Enable security compiler and linker flags.
 require qcom-security_flags.inc
