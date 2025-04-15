@@ -20,9 +20,10 @@ GL_PROVIDER ?= "qcom-adreno"
 GL_PROVIDER:qcom-base-bsp ?= "mesa"
 
 PREFERRED_PROVIDER_virtual/egl      = "${GL_PROVIDER}"
-PREFERRED_PROVIDER_virtual/libgl    = "${GL_PROVIDER}"
 PREFERRED_PROVIDER_virtual/libgles1 = "${GL_PROVIDER}"
 PREFERRED_PROVIDER_virtual/libgles2 = "${GL_PROVIDER}"
+PREFERRED_PROVIDER_virtual/mesa:qcom-custom-bsp = "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'mesa-gl', '', d)}"
+PREFERRED_PROVIDER_virtual/libgl:qcom-custom-bsp = "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'mesa-gl', '', d)}"
 
 PREFERRED_PROVIDER_virtual/egl-native      = "mesa-native"
 PREFERRED_PROVIDER_virtual/libgl-native    = "mesa-native"
@@ -30,7 +31,8 @@ PREFERRED_PROVIDER_virtual/libgles1-native = "mesa-native"
 PREFERRED_PROVIDER_virtual/libgles2-native = "mesa-native"
 
 # Provider for libgbm
-PREFERRED_PROVIDER_virtual/libgbm ?= "gbm"
+PREFERRED_PROVIDER_virtual/libgbm ?= "msm"
+PREFERRED_PROVIDER_virtual/libqbm ?= "qbm"
 PREFERRED_PROVIDER_virtual/libgbm:qcom-base-bsp ?= "mesa"
 
 # Provider for linux kernel
@@ -64,6 +66,9 @@ PREFERRED_VERSION_fastrpc:qcom-custom-bsp ?= "15.0.qcom"
 #Use version of libvirt from meta-qcom-hwe
 PREFERRED_VERSION_libvirt = "9.2.0"
 
+#Use version of android-tools from meta-openembedded
+PREFERRED_VERSION_android-tools ?= "5.1.1.r37"
+
 # For module signing
 INHERIT += " qmodule"
 
@@ -79,7 +84,7 @@ EXTRA_IMAGECMD:ota-ext4:append = " -O encrypt,stable_inodes"
 IMAGE_TYPES_MASKED = "tar.gz"
 
 # Default serial console for QCOM devices
-SERIAL_CONSOLES ?= "115200;ttyMSM0"
+SERIAL_CONSOLES ??= "115200;ttyMSM0"
 
 INITRAMFS_MAXSIZE = "393216"
 
@@ -113,4 +118,5 @@ EFI_LINUX_IMG ?= "linux-${MACHINE}.efi"
 KERNEL_DTBDEST = "${EFI_DTB_DIR}"
 
 CORE_IMAGE_EXTRA_INSTALL:sota += "efimount"
+CORE_IMAGE_EXTRA_INSTALL:sota += "varmount"
 IMAGE_CLASSES += "image_types_ota_sdboot"
