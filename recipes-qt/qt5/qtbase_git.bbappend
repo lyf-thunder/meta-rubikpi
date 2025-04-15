@@ -11,3 +11,4 @@ PACKAGECONFIG_GL = "gles2 eglfs gl"
 PACKAGECONFIG_FONTS += "fontconfig"
 
 PACKAGECONFIG:append = " eglfs examples accessibility "
+PACKAGECONFIG:remove = "xcomposite-egl xcomposite-glx xcb"

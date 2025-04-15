@@ -11,6 +11,8 @@ SRC_URI =  " \
 SRCREV_python = "8b797fdde07d564f648bddba900507ac241eba6e"
 SRCREV_c = "4bfb0de9f6605978e55ee2e89374b2eb2a84358d"
 
+SRCREV_FORMAT = "python_c"
+
 S = "${WORKDIR}/git/python"
 
 inherit setuptools3 pkgconfig

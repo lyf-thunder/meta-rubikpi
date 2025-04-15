@@ -211,8 +211,8 @@ cat >| ${BUILDDIR}/conf/local.conf <<EOF
 # set_bb_env.sh is sourced to set up a workspace.  DO NOT EDIT.
 #--------------------------------------------------------------
 EOF
-if [ -e $WS/layers/meta-qcom-distro/conf/local.conf ]; then
-    cat $WS/layers/meta-qcom-distro/conf/local.conf >> ${BUILDDIR}/conf/local.conf
+if [ -e $WS/layers/meta-rubikpi/conf/local.conf ]; then
+    cat $WS/layers/meta-rubikpi/conf/local.conf >> ${BUILDDIR}/conf/local.conf
 fi
 # If CUST_ID is avilable update
 if [ -n "$CUST_ID" ]; then
