@@ -5,6 +5,10 @@ FILESPATH =+ "${TOPDIR}/../src/vendor/qcom/opensource:"
 SRC_URI = "file://kernel-6.6;protocol=file;name=git \
            ${@bb.utils.contains('DISTRO_FEATURES', 'selinux', ' file://selinux.cfg', '', d)} \
            ${@bb.utils.contains('DISTRO_FEATURES', 'selinux', ' file://selinux_debug.cfg', '', d)} \
+           ${@bb.utils.contains('DISTRO_FEATURES', 'smack', ' file://smack.cfg', '', d)} \
+           ${@bb.utils.contains('DISTRO_FEATURES', 'smack', ' file://smack_debug.cfg', '', d)} \
+           file://0001-QCLINUX-Add-support-to-compile-msm_display.ko.patch \
+           file://0002-QCLINUX-lt9611uxc-changes-to-include-htotal-and-vtot.patch \
            "
 S = "${WORKDIR}/kernel-6.6"
 
