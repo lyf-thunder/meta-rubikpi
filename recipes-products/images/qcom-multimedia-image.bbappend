@@ -10,6 +10,7 @@ CORE_IMAGE_BASE_INSTALL += " \
 	rubikpi-wifi \
 	rubikpi-config \
 	packagegroup-qcom-test-pkgs \
+	first-login \
 "
 
 IMAGE_INSTALL:append = " hostapd"
@@ -30,7 +31,7 @@ IMAGE_INSTALL:append = " var-rubikpi-config-mount"
 IMAGE_INSTALL:append = " wiringrp wiringrp-python wiringrp-gpio"
 
 EXTRA_USERS_PARAMS = "\
-    useradd -r -s /bin/false system; \
+    usermod -s /bin/bash root; \
     usermod -p '\$6\$FIumPDif04\$xNtcC1aRH.k0FnCrzUH807bD6uND43RMUWPzIDnXgp0JDrC86mCVFfp1o7jH/6qCRXGPpStTcZUo4zkJkcSE31' root; \
     "
 

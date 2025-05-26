@@ -11,3 +11,7 @@ do_install_basefilesissue:append() {
 	echo "If you encounter any issues, please visit https://github.com/rubikpi-ai to download the latest software version." >> ${D}${sysconfdir}/issue.net
 	echo >> ${D}${sysconfdir}/issue.net
 }
+
+do_install:append() {
+    echo "[ -f /usr/sbin/first-login ] && /usr/sbin/first-login" >> ${D}${sysconfdir}/profile
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=Force password change on first login
+After=multi-user.target
+Before=init_display.service
+
+[Service]
+User=root
+Restart=always
+Type=oneshot
+ExecStart=/usr/sbin/first-login
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
