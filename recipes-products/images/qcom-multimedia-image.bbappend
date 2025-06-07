@@ -28,6 +28,7 @@ IMAGE_INSTALL:append = " ros-core turtlesim"
 IMAGE_INSTALL:append = " iotop lsof"
 IMAGE_INSTALL:append = " var-rubikpi-config-mount"
 IMAGE_INSTALL:append = " wiringrp wiringrp-python wiringrp-gpio"
+IMAGE_INSTALL:append = " camx-extra-files"
 
 EXTRA_USERS_PARAMS = "\
     useradd -r -s /bin/false system; \
