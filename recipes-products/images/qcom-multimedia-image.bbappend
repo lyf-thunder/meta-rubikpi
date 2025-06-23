@@ -11,6 +11,7 @@ CORE_IMAGE_BASE_INSTALL += " \
 	rubikpi-config \
 	packagegroup-qcom-test-pkgs \
 	first-login \
+	usb-scripts-automount \
 "
 
 IMAGE_INSTALL:append = " hostapd"
