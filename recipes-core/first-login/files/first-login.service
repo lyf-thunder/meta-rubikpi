@@ -1,8 +1,7 @@
 [Unit]
 Description=Force password change on first login
 After=multi-user.target
-Before=init_display.service
-
+Before=android-tools-adbd.service init_display.service
 [Service]
 User=root
 Restart=always
