@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -e
+set -u
+
+GADGET="/sys/kernel/config/usb_gadget/adb"
+MNT="/dev/usb-ffs/adb"
+
+echo "[cleanup] Start cleaning USB gadget adb..."
+
+[ -d "$GADGET" ] || {
+    echo "[cleanup] No gadget found, exit."
+    exit 0
+}
+
+cd "$GADGET"
+
+if [ -e UDC ]; then
+    echo "" > UDC 2>/dev/null || echo "[cleanup] Skipped UDC unbind (device may already be gone)"
+fi
+
+killall adbd 2>/dev/null || echo "[cleanup] No adbd process found"
+
+if mountpoint -q "$MNT"; then
+    umount "$MNT" || echo "[cleanup] Warning: failed to umount $MNT"
+else
+    echo "[cleanup] $MNT not mounted, skip umount"
+fi
+
+[ -L configs/c.1/ffs.usb0 ] && rm -f configs/c.1/ffs.usb0 || echo "none ffs.usb0 missing"
+
+[ -d configs/c.1/strings/0x409 ] && rmdir configs/c.1/strings/0x409 || echo "[cleanup] No such config string dir"
+
+[ -d configs/c.1 ] && rmdir configs/c.1 || echo "[cleanup] configs/c.1 not empty or missing"
+
+[ -d functions/ffs.usb0 ] && rmdir functions/ffs.usb0 || echo "[cleanup] function ffs.usb0 missing"
+
+[ -d strings/0x409 ] && rmdir strings/0x409 || echo "[cleanup] strings/0x409 missing"
+
+cd /sys/kernel/config/usb_gadget
+[ -d adb ] && rmdir adb 2>/dev/null || echo "[cleanup] Gadget 'adb' not empty or already gone"
+
+echo "[cleanup] Gadget cleanup completed."

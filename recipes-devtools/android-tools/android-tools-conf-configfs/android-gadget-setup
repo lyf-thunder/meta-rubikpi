@@ -1,0 +1,42 @@
+#!/bin/sh
+set -e
+
+manufacturer="RPB"
+model="Android device"
+serial="0123456789ABCDEF"
+
+
+[ -r /etc/android-gadget-setup.machine ] && . /etc/android-gadget-setup.machine
+
+
+[ -d /sys/kernel/config/usb_gadget ] || modprobe libcomposite
+
+cd /sys/kernel/config/usb_gadget
+
+[ -d adb ] && /usr/bin/android-gadget-cleanup || true
+
+
+mkdir -p adb/configs/c.1/strings/0x409
+mkdir -p adb/functions/ffs.usb0
+mkdir -p adb/strings/0x409
+
+cd adb
+
+echo 0x18d1 > idVendor
+echo 0xd002 > idProduct
+echo "$serial" > strings/0x409/serialnumber
+echo "$manufacturer" > strings/0x409/manufacturer
+echo "$model" > strings/0x409/product
+echo "Conf 1" > configs/c.1/strings/0x409/configuration
+
+ln -sf functions/ffs.usb0 configs/c.1
+
+
+mkdir -p /dev/usb-ffs/adb
+
+
+if ! mountpoint -q /dev/usb-ffs/adb; then
+    mount -t functionfs usb0 /dev/usb-ffs/adb
+else
+    echo "[setup] /dev/usb-ffs/adb already mounted"
+fi
