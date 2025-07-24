@@ -1,6 +1,6 @@
 DISTRO_NAME = "Qualcomm Linux"
 
-DISTRO_VERSION = "1.4-ver.1.1"
+DISTRO_VERSION = "1.5-ver.1.1"
 
 # Extend the version string of the Linux kernel to indicate distro
 LINUX_VERSION_EXTENSION = "-qli-${DISTRO_VERSION}"
@@ -97,3 +97,7 @@ OSTREE_MULTI_DEVICETREE_SUPPORT = "0"
 
 # Set OPKGLIBDIR to /etc to support OSTree for OTA
 OPKGLIBDIR ?= "${@bb.utils.contains('DISTRO_FEATURES', 'sota', '/etc', '/var/lib', d)}"
+
+# Set PREFERRED_PROVIDER virtual/mesa and virtual/libgl as mesa-gl for qcom-custom-bsp when x11 is enabled
+PREFERRED_PROVIDER_virtual/mesa:qcom-custom-bsp = "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'mesa-gl', 'mesa', d)}"
+PREFERRED_PROVIDER_virtual/libgl:qcom-custom-bsp = "${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'mesa-gl', 'mesa', d)}"
