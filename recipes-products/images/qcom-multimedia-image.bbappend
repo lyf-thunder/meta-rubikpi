@@ -29,6 +29,14 @@ IMAGE_INSTALL:append = " python3-pyqt5 python3-pytest-qt"
 IMAGE_INSTALL:append = " iotop lsof"
 IMAGE_INSTALL:append = " var-rubikpi-config-mount"
 IMAGE_INSTALL:append = " wiringrp wiringrp-python wiringrp-gpio"
+IMAGE_INSTALL:append = " glibc-utils"
+IMAGE_INSTALL:append = " \
+    fontconfig \
+    ttf-vlgothic \
+    glibc-gconv-euc-jp \
+    glibc-gconv-sjis \
+    locale-base-ja-jp \
+"
 
 EXTRA_USERS_PARAMS = "\
     usermod -s /bin/bash root; \
