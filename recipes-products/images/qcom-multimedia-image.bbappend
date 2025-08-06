@@ -30,6 +30,7 @@ IMAGE_INSTALL:append = " iotop lsof"
 IMAGE_INSTALL:append = " var-rubikpi-config-mount"
 IMAGE_INSTALL:append = " wiringrp wiringrp-python wiringrp-gpio"
 IMAGE_INSTALL:append = " glibc-utils"
+IMAGE_INSTALL:append = " camx-extra-files"
 IMAGE_INSTALL:append = " \
     fontconfig \
     ttf-vlgothic \
